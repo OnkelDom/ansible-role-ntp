@@ -1,0 +1,32 @@
+# {{ ansible_managed }}
+
+{% if ntp_driftfile is defined %}
+driftfile {{ ntp_driftfile }}
+{% endif %}
+{% if ntp_statistics is defined %}
+statistics {{ ntp_statistics }}
+{% endif %}
+{% if ntp_filegen is defined %}
+{% for value in ntp_filegen %}
+filegen {{ value }}
+{% endfor%}
+{% endif %}
+{% if ntp_leapfile is defined %}
+leapfile {{ ntp_leapfile }}
+{% endif %}
+{% if ntp_statsdir is defined %}
+statsdir {{ ntp_statsdir }}
+{% endif %}
+{% if ntp_includefile is defined %}
+includefile {{ ntp_includefile }}
+{% endif %}
+{% if ntp_pool is defined%}
+{% for value in ntp_pool %}
+pool {{ value }}
+{% endfor%}
+{% endif %}
+{% if ntp_restrict is defined %}
+{% for value in ntp_restrict %}
+restrict {{ value }}
+{% endfor%}
+{% endif %}

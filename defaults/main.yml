@@ -1,0 +1,10 @@
+---
+ntp_timezone: Europe/Berlin
+ntp_area: 'de'
+ntp_pool:
+  - "192.168.1 iburst"
+ntp_restrict:
+  - -4 default kod notrap nomodify nopeer noquery limited
+  - "127.0.0.1"
+  - -6 default kod notrap nomodify nopeer noquery limited
+  - "::1"
